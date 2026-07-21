@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 const navLinks = [
   { label: 'HOME', path: '/' },
   { label: 'ABOUT', path: '/about' },
   { label: 'PROJECTS', path: '/projects' },
   { label: 'CERTIFICATES', path: '/certificates' },
+  { label: 'CV', path: '/cv' },
   { label: 'CONTACT', path: '/contact' },
 ];
 

@@ -1,5 +1,7 @@
 
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FileText } from 'lucide-react';
 import { simpleSkills as skills } from '../data/about';
 
 const About = () => {
@@ -24,22 +26,32 @@ const About = () => {
                   <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>PURPOSE.</span>
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  I'm a Computer Science student at Universitas Negeri Makassar (UNM) specializing in full-stack web development and AI integration. I build complete web applications with strong backends and responsive interfaces.
+                  I'm a student majoring in <span className="text-white font-medium">Teknik Informatika & Komputer</span> at <span className="text-white font-medium">Universitas Negeri Makassar (UNM)</span> specializing in full-stack web development and AI integration. I build complete web applications with strong backends and responsive interfaces.
                 </p>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
                   As a Full-Stack Developer at COCONUT Computer Club, I build internal systems using Golang, Python, React, and Next.js, bridging intelligent features with seamless user experiences.
                 </p>
 
-                <div className="flex items-center gap-8">
+                <div className="flex flex-wrap items-center gap-8">
                   <div className="text-center">
                     <h4 className="text-4xl font-display font-bold text-white">20+</h4>
                     <p className="text-xs text-[#00df8f] mt-2 uppercase tracking-widest font-bold">Projects</p>
                   </div>
-                  <div className="w-[1px] h-12 bg-white/10"></div>
+                  <div className="w-[1px] h-12 bg-white/10 hidden sm:block"></div>
                   <div className="text-center">
                     <h4 className="text-4xl font-display font-bold text-white">8+</h4>
                     <p className="text-xs text-[#00df8f] mt-2 uppercase tracking-widest font-bold">Certifications</p>
                   </div>
+
+                  <div className="w-[1px] h-12 bg-white/10 hidden sm:block"></div>
+
+                  <Link
+                    to="/cv"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#00df8f]/10 border border-[#00df8f]/30 hover:bg-[#00df8f] text-[#00df8f] hover:text-[#0d1116] font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(0,223,143,0.2)]"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>Lihat CV Lengkap</span>
+                  </Link>
                 </div>
              </motion.div>
 

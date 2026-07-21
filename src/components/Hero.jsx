@@ -1,11 +1,18 @@
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Package, Heart } from 'lucide-react';
+import { ArrowRight, Star, Package, Heart, FileText } from 'lucide-react';
+import CVModal from './CVModal';
 
 const Hero = () => {
+  const [cvOpen, setCvOpen] = useState(false);
+
   return (
-    <section
+    <>
+      <CVModal isOpen={cvOpen} onClose={() => setCvOpen(false)} />
+
+      <section
       className="relative min-h-screen pt-32 pb-20 flex flex-col justify-center overflow-hidden bg-[#0d1116]"
       style={{
         backgroundImage: `
@@ -41,26 +48,30 @@ const Hero = () => {
                 <span className="text-[#00df8f] text-sm font-semibold tracking-widest uppercase">FULL-STACK DEVELOPER</span>
               </div>
 
-              <h1 className="text-[3.5rem] md:text-[5rem] lg:text-[6rem] font-display font-bold leading-[0.9] tracking-tighter mb-8">
+              <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] font-display font-bold leading-[0.95] sm:leading-[0.9] tracking-tighter mb-6 sm:mb-8">
                 <span className="text-white block">FULL-STACK</span>
                 <span className="text-transparent block" style={{ WebkitTextStroke: '2px #00df8f' }}>ENGINEER<span className="text-[#00df8f]" style={{ WebkitTextStroke: '0px' }}>.</span></span>
               </h1>
 
-              <p className="text-lg text-gray-400 max-w-md leading-relaxed mb-12">
+              <p className="text-base sm:text-lg text-gray-400 max-w-md leading-relaxed mb-8 sm:mb-12">
                 I build <span className="text-[#00df8f]">full-stack web apps</span> and AI-powered systems — from scalable backend APIs to interactive frontends — using Golang, Python, React, and Next.js.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-20">
-                <Link to="/projects" className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-[#00df8f] to-[#00b373] rounded-full font-bold text-[#0d1116] transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(0,223,143,0.3)]">
+              <div className="flex flex-wrap gap-4 mb-12 sm:mb-20">
+                <Link to="/projects" className="flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#00df8f] to-[#00b373] rounded-full font-bold text-[#0d1116] text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(0,223,143,0.3)]">
                   View My Work
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-[#0d1116]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center">
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0d1116]" />
                   </div>
                 </Link>
-                <Link to="/contact" className="flex items-center gap-3 px-8 py-4 bg-[#14181f] border border-white/5 hover:border-white/20 rounded-full font-bold text-white transition-all duration-300">
-                  Contact Me
-                  <div className="w-2 h-2 rounded-full bg-[#00df8f]"></div>
-                </Link>
+
+                <button
+                  onClick={() => setCvOpen(true)}
+                  className="flex items-center gap-2.5 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#14181f] border border-[#00df8f]/30 hover:border-[#00df8f] hover:bg-[#00df8f]/10 rounded-full font-bold text-white text-sm sm:text-base transition-all duration-300 shadow-[0_0_20px_rgba(0,223,143,0.15)] group"
+                >
+                  <FileText className="w-4 h-4 text-[#00df8f] group-hover:scale-110 transition-transform" />
+                  <span>Lihat CV</span>
+                </button>
               </div>
 
               {/* Stats */}
@@ -178,6 +189,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

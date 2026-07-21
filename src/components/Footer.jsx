@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'About', path: '/about' },
   { label: 'Projects', path: '/projects' },
   { label: 'Certificates', path: '/certificates' },
+  { label: 'Curriculum Vitae (CV)', path: '/cv' },
   { label: 'Contact', path: '/contact' },
 ];
 

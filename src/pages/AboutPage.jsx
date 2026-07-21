@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Briefcase, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { GraduationCap, Briefcase, ArrowUpRight, ArrowRight, FileText } from 'lucide-react';
 import { detailedSkills as skills, experiences } from '../data/about';
 
 /* ─── Animation variants ───────────────────────────────── */
@@ -51,13 +51,22 @@ const AboutPage = () => {
                 </span>
               </h1>
 
-              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-                Computer Science student at{' '}
+              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed mb-8">
+                Student majoring in{' '}
+                <span className="text-white font-medium">Teknik Informatika & Komputer</span> at{' '}
                 <span className="text-white font-medium">Universitas Negeri Makassar (UNM)</span> since
                 2023, specializing in{' '}
                 <span className="text-[#00df8f]">full-stack web development</span> and AI integration.
                 I build reliable, end-to-end web applications with powerful backends and responsive frontends.
               </p>
+
+              <Link
+                to="/cv"
+                className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-[#00df8f]/10 border border-[#00df8f]/30 hover:bg-[#00df8f] text-[#00df8f] hover:text-[#0d1116] font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(0,223,143,0.2)]"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Baca CV Online</span>
+              </Link>
             </motion.div>
 
             {/* Right: profile photo */}
@@ -97,8 +106,8 @@ const AboutPage = () => {
             className="flex flex-wrap gap-10 mt-14"
           >
             {[
+              { value: 'Teknik Informatika & Komputer', label: 'Jurusan / Major' },
               { value: 'UNM', label: 'University' },
-              { value: 'Sem 6', label: 'Current Semester' },
               { value: '2023', label: 'Batch Year' },
               { value: 'Makassar', label: 'Location' },
             ].map((s) => (
@@ -167,14 +176,14 @@ const AboutPage = () => {
                     <GraduationCap className="w-6 h-6 text-[#00df8f]" />
                   </div>
                   <h4 className="text-xl font-display font-bold text-white mb-1">
-                    Teknologi Rekayasa Komputer / Informatika (B.S.)
+                    Teknik Informatika & Komputer (S1)
                   </h4>
                   <p className="text-[#00df8f] font-semibold text-sm mb-4">
                     Universitas Negeri Makassar (UNM)
                   </p>
                   <div className="flex flex-wrap gap-6 text-sm text-gray-500 mb-6">
                     <span>NIM: 230209502026</span>
-                    <span>Kelas Teknik Komputer</span>
+                    <span>Jurusan Teknik Informatika & Komputer</span>
                     <span>2023 — Present</span>
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed">

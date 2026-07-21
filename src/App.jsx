@@ -12,6 +12,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const CertificatesPage = lazy(() => import('./pages/CertificatesPage'));
+const CVPage = lazy(() => import('./pages/CVPage'));
 
 /* ─── Error Boundary Component for App Durability ───────── */
 class ErrorBoundary extends Component {
@@ -77,6 +78,7 @@ function App() {
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/certificates" element={<CertificatesPage />} />
+                <Route path="/cv" element={<CVPage />} />
                 <Route
                   path="*"
                   element={

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#0d1116"/>
+  <rect width="62" height="62" x="1" y="1" rx="15" fill="#12161c" stroke="#00df8f" stroke-opacity="0.35" stroke-width="2"/>
+  <!-- Stylized Monogram "I" with neon green accent dot -->
+  <text x="16" y="45" font-family="'Outfit', 'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="36" fill="#ffffff">I</text>
+  <circle cx="42" cy="40" r="5.5" fill="#00df8f"/>
+  <circle cx="42" cy="40" r="8" fill="#00df8f" fill-opacity="0.25"/>
+</svg>

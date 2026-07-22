@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.indalawalaikal.my.id/sitemap.xml
 Sitemap: https://indalawalaikal.my.id/sitemap.xml

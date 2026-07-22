@@ -83,8 +83,10 @@ const AboutPage = () => {
                 {/* Photo */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#00df8f]/30 shadow-[0_0_40px_rgba(0,223,143,0.15)]">
                   <img
-                    src="/profile.png"
+                    src="/profile.webp"
                     alt="Indal Awalaikal"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

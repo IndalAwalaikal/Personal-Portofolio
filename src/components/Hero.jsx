@@ -164,7 +164,7 @@ const Hero = () => {
                   <div className="absolute inset-0 z-20 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
                   <img
-                    src="/profile.png"
+                    src="/profile.webp"
                     alt="Indal Awalaikal - Backend & Full-Stack Developer"
                     decoding="async"
                     fetchPriority="high"

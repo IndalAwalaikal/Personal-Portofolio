@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'HOME', path: '/' },
@@ -62,26 +62,36 @@ const Navbar = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="hidden md:flex items-center gap-1"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative px-4 py-2 text-xs font-bold tracking-widest transition-colors duration-200 rounded-lg ${
-                  isActive(link.path)
-                    ? 'text-[#00df8f]'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {link.label}
-                {isActive(link.path) && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute inset-0 bg-[#00df8f]/10 rounded-lg border border-[#00df8f]/20"
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative px-4 py-2.5 text-xs font-bold tracking-widest transition-colors duration-300 group ${
+                    active ? 'text-[#00df8f]' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  <span className="relative z-10">{link.label}</span>
+
+                  {/* Active Smooth Animated Underline */}
+                  {active && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#00df8f] rounded-full shadow-[0_0_12px_#00df8f]"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    >
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#00df8f] shadow-[0_0_6px_#00df8f]" />
+                    </motion.div>
+                  )}
+
+                  {/* Hover Underline Expansion for Inactive Items */}
+                  {!active && (
+                    <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-[#00df8f]/50 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-center" />
+                  )}
+                </Link>
+              );
+            })}
           </motion.div>
 
           {/* Right side: status dot + hamburger */}
@@ -120,25 +130,28 @@ const Navbar = () => {
             className="fixed top-20 inset-x-0 z-40 bg-[#0f1115]/95 backdrop-blur-xl border-b border-white/10 md:hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    to={link.path}
-                    className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-widest transition-colors ${
-                      isActive(link.path)
-                        ? 'text-[#00df8f] bg-[#00df8f]/10 border border-[#00df8f]/20'
-                        : 'text-gray-400 hover:text-white hover:bg-white/5'
-                    }`}
+              {navLinks.map((link, i) => {
+                const active = isActive(link.path);
+                return (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      to={link.path}
+                      className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-widest transition-all ${
+                        active
+                          ? 'text-[#00df8f] bg-[#00df8f]/10 border-l-2 border-[#00df8f] pl-5'
+                          : 'text-gray-400 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
               <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#00df8f] animate-pulse" />
                 <span className="text-[10px] font-semibold tracking-widest text-[#00df8f] uppercase">Available for projects</span>

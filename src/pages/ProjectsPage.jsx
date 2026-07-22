@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ExternalLink, GitFork, Filter } from 'lucide-react';
 import { projects, projectCategories as categories } from '../data/projects';
+import SEO from '../components/SEO';
 
 /* ─── Animation ─────────────────────────────────────────── */
 const fadeUp = {
@@ -122,6 +123,11 @@ const ProjectsPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0d1116]">
+      <SEO
+        title="Projects by Indal Awalaikal"
+        description="Koleksi proyek web & backend ciptaan Indal Awalaikal — AgentOps AI, LAKOO SaaS, LogicLeap Academy, AgroAdvisor, dan platform digital berbasis Golang, Python, React, Next.js."
+        keywords="Proyek Indal Awalaikal, Indal Awalaikal Projects, AgentOps AI, LAKOO SaaS ERP, AgroAdvisor, Portfolio Developer"
+      />
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         <div

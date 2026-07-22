@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Award, Calendar, BadgeCheck } from 'lucide-react';
 import { certificates, levelColors } from '../data/certificates';
+import SEO from '../components/SEO';
 
 /* ─── Animation ─────────────────────────────────────────── */
 const fadeUp = {
@@ -182,12 +183,18 @@ const PreviewModal = ({ cert, onClose }) => {
   );
 };
 
+
 /* ─── Page ───────────────────────────────────────────────── */
 const CertificatesPage = () => {
   const [viewing, setViewing] = useState(null);
 
   return (
     <div className="min-h-screen bg-[#0d1116]">
+      <SEO
+        title="Certificates of Indal Awalaikal"
+        description="Sertifikat & Lisensi Profesional Indal Awalaikal — Backend & Full-Stack Development, Golang, Python, DevOps, Cloud Computing, dan Machine Learning."
+        keywords="Sertifikat Indal Awalaikal, Lisensi Indal Awalaikal, Indal Awalaikal Certificates, Backend Developer Certification"
+      />
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         <div

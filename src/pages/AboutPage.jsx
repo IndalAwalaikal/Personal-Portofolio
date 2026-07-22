@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { GraduationCap, Briefcase, ArrowUpRight, ArrowRight, FileText } from 'lucide-react';
 import { detailedSkills as skills, experiences } from '../data/about';
 
+import SEO from '../components/SEO';
+
 /* ─── Animation variants ───────────────────────────────── */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,6 +15,11 @@ const fadeUp = {
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-[#0d1116]">
+      <SEO
+        title="About Indal Awalaikal"
+        description="Tentang Indal Awalaikal — Full-Stack & Backend Developer, Mahasiswa Teknik Informatika & Komputer di Universitas Negeri Makassar (UNM) angkatan 2023."
+        keywords="About Indal Awalaikal, Indal Awalaikal UNM, Profil Indal Awalaikal, Teknik Informatika & Komputer UNM, COCONUT Computer Club"
+      />
       {/* ── Hero Banner ───────────────────────────────────── */}
       <section className="relative pt-36 pb-24 overflow-hidden">
         {/* Grid bg */}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactInfo } from '../data/contact';
+import SEO from '../components/SEO';
 
 /* ─── Animation ─────────────────────────────────────────── */
 const fadeUp = {
@@ -60,6 +61,11 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0d1116]">
+      <SEO
+        title="Contact Indal Awalaikal"
+        description="Hubungi Indal Awalaikal — Full-Stack & Backend Developer. Kirim pesan, diskusikan proyek, atau jalin kerja sama di bidang pengembangan web dan AI systems."
+        keywords="Kontak Indal Awalaikal, Contact Indal Awalaikal, Hire Indal Awalaikal, Hubungi Developer Makassar"
+      />
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         <div

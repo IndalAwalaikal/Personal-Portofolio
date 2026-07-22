@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Download, FileText, Eye } from 'lucide-react';
+import SEO from '../components/SEO';
 
 /* ─── Animation ─────────────────────────────────────────── */
 const fadeUp = {
@@ -12,6 +13,11 @@ const CVPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0d1116]">
+      <SEO
+        title="CV Indal Awalaikal — Full-Stack & Backend Developer"
+        description="Lihat dan unduh CV resmi Indal Awalaikal — Full-Stack & Backend Developer, Mahasiswa Teknik Informatika & Komputer UNM, spesialis Golang, Python, React, dan AI Systems."
+        keywords="CV Indal Awalaikal, Resume Indal Awalaikal, Download CV Developer, Indal Awalaikal Curriculum Vitae"
+      />
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="relative pt-36 pb-12 overflow-hidden">
         {/* Background Grid */}
